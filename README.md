@@ -1,2 +1,2 @@
 # info2180-lab3
-This is lab3 for Noel Powell
+This is lab 3 for Noel Powell
