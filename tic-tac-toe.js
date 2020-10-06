@@ -1,4 +1,4 @@
-// HTML Elements
+
 const board = document.getElementById('board');
 const game = document.getElementById('game');
 const controls = document.getElementsByClassName('controls');
@@ -6,16 +6,16 @@ const statusDiv = document.querySelector('#status');
 const resetDiv = document.querySelector('.btn');
 const cellDivs = document.querySelectorAll('.square');
 
-// game constants
+
 const play_x = 'X';
 const play_o = 'O';
 
-// game variables
+
 let current_game = true;
 let player_turn = true;
 
 
-// functions
+
 const converter = (letter) => letter === 'X' ? play_x : play_o;
 
 const Win_master = (letter) => {
@@ -38,7 +38,7 @@ const is_GameStatus = () => {
   const bottomMiddle = cellDivs[7].classList[1];
   const bottomRight = cellDivs[8].classList[1];
 
-  // check winner
+  
   if (topLeft && topLeft === topMiddle && topLeft === topRight) {
     Win_master(topLeft);
     cellDivs[0].classList.add('won');
@@ -93,7 +93,7 @@ const is_GameStatus = () => {
  };
  
  
- // event Handlers
+ 
  const handleReset = () => {
   player_turn= true;
   statusDiv.innerHTML = `${play_x} is next`;
@@ -122,7 +122,7 @@ const is_GameStatus = () => {
  };
  
  
- // event listeners
+ 
  resetDiv.addEventListener('click', handleReset);
  
  for (const cellDiv of cellDivs) {
