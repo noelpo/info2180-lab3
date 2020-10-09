@@ -32,7 +32,7 @@ const WINNING_COMBINATIONS = [
 //function checkWin(status) {
   //return WINNING_COMBINATIONS.some(combination => {
    // return combination.every(index => {
-    //return size[counter].classList.contains(status)
+    //return size[counter].classList.contains(status
     //  winningMessageTextElement.innerText = `${status ? " Congratulation O" : " Congratulations X's"} Wins!`
    // })
   ///})
