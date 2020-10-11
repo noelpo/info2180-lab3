@@ -83,19 +83,25 @@ function handleClick(event){
   function nohoverr(event){
     event.target.classList.remove('hover');
   }
-  function checkWin(){
-    if( b_array[0].textContent === "X" && b_array[1].textContent === "X" && b_array[2].textContent === "X"){
-      alert('you-won')
-    }else if(b_array[3].textContent === "X" && b_array[4].textContent === "X" && b_array[5].textContent === "X"){
-      alert('you-won')
-    }else if (b_array[6].textContent === "X" && b_array[7].textContent === "X" && b_array[8].textContent === "X"){
-      alert('you-won')
-    }   else if (b_array[0].textContent === "O" && b_array[1].textContent === "O" && b_array[2].textContent === "O"){
-       alert('you-won')
-    } else  if (b_array[3].textContent === "O" && b_array[4].textContent === "O" && b_array[5].textContent === "O"){
-      alert('you-won')
-    }else if (b_array[6].textContent === "O" && b_array[7].textContent === "O" && b_array[8].textContent === "O"){
-
+  const state = document.getElementById('status')
+    function checkWin(){
+      for(counter=0;counter <b_array.length;counter++){
+        if(b_array[WINNING_COMBINATIONS[counter][0]].textContent=="X" && b_array[WINNING_COMBINATIONS[counter][1]].textContent=="X" &&
+        b_array[WINNING_COMBINATIONS[counter][2]].textContent=="X"){
+             state.innerHTML="Congratulations! X  is the winner"
+             state.setAttribute('class','you-won')
+        } else  if(b_array[WINNING_COMBINATIONS[counter][0]].textContent=="O" && b_array[WINNING_COMBINATIONS[counter][1]].textContent=="O" &&
+        b_array[WINNING_COMBINATIONS[counter][2]].textContent=="O"){
+             state.innerHTML="Congratulations! O  is the winner"
+             state.setAttribute('class','you-won')
+        }
+      }
+     function clearBoard(){
+       for(let c =0;c < boxes.length;c++){
+         boxes[c].innerHTML="btn";
+         boxes[c].style.color ='white';
+         boxes[c].style.backgroundColor ='white';
+       }
+     }
     }
-  }
 })
